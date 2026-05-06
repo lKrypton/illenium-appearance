@@ -65,6 +65,8 @@ export const useAppearanceStore = defineStore('appearance', () => {
 
 
   // ── Computed ──
+  const isPaused = computed(() => !isPreloading.value && preloadProgress.value > 0)
+
   const hasChanges = computed(() => {
     if (!appearance.value || !originalAppearance.value) return false
     return JSON.stringify(appearance.value) !== JSON.stringify(originalAppearance.value)
@@ -546,6 +548,23 @@ export const useAppearanceStore = defineStore('appearance', () => {
         }
         return true
       })
+
+      // Sort filteredItems to match the UI display order (front-to-back)
+      if (type === 'components') {
+        const order = [11, 8, 3, 4, 6, 10, 1, 9, 5, 7]
+        filteredItems.sort((a, b) => {
+          const ai = order.indexOf((a as any).component_id)
+          const bi = order.indexOf((b as any).component_id)
+          return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi)
+        })
+      } else if (type === 'props') {
+        const order = [0, 1, 2, 6, 7]
+        filteredItems.sort((a, b) => {
+          const ai = order.indexOf((a as any).prop_id)
+          const bi = order.indexOf((b as any).prop_id)
+          return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi)
+        })
+      }
     }
 
     if (!isResuming) {
@@ -595,7 +614,13 @@ export const useAppearanceStore = defineStore('appearance', () => {
           } else {
              await changeProp({ prop_id: (item as any).prop_id, drawable: d, texture: 0 })
           }
-          
+
+          // Check again after async NUI call so progress is never updated after cancel
+          if (cancelPreload.value) {
+            preloadState.value.lastDrawable = d
+            throw new Error('Canceled')
+          }
+
           preloadState.value.currentStep++
           preloadProgress.value = Math.round((preloadState.value.currentStep / preloadState.value.totalSteps) * 100)
           await new Promise(resolve => setTimeout(resolve, 35))
@@ -607,6 +632,10 @@ export const useAppearanceStore = defineStore('appearance', () => {
       preloadProgress.value = 100
       setTimeout(() => { preloadProgress.value = 0 }, 2000)
     } catch (e) {
+      // Hard stop (Cancel): preloadProgress was set to 0 by stopPreload → reset state for a fresh start next time
+      if (preloadProgress.value === 0) {
+        preloadState.value = { type: null, lastItemIndex: 0, lastDrawable: -2, currentStep: 0, totalSteps: 0 }
+      }
       console.log('Preload paused or failed', e)
     } finally {
       // Restore original look
@@ -648,6 +677,7 @@ export const useAppearanceStore = defineStore('appearance', () => {
     isOutfitsPanelOpen,
     isLightPanelOpen,
     isPreloading,
+    isPaused,
     preloadProgress,
     preloadItem,
     isFilterFavoritesActive,

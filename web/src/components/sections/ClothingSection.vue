@@ -138,7 +138,7 @@ function getSetting(id: number) {
           <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
             :style="{ background: 'rgba(var(--theme-accent-rgb), 0.1)', border: '1px solid rgba(var(--theme-accent-rgb), 0.2)' }"
           >
-            <FaIcon icon="cloud-arrow-down" :size="14" class="text-theme-accent animate-pulse" />
+            <FaIcon icon="cloud-arrow-down" :size="14" class="text-theme-accent" />
           </div>
           <div class="flex flex-col">
             <h2 class="text-[12px] font-bold text-theme-accent uppercase tracking-widest font-display">
@@ -159,10 +159,10 @@ function getSetting(id: number) {
         <button
           class="flex-1 h-7 flex items-center justify-center gap-1.5 rounded text-[9px] font-bold uppercase tracking-wider border transition-all hover:scale-[1.02] active:scale-95"
           :style="{ color: 'rgba(var(--theme-accent-rgb), 0.7)', borderColor: 'rgba(var(--theme-accent-rgb), 0.2)', background: 'rgba(var(--theme-accent-rgb), 0.05)' }"
-          @click="store.pausePreload()"
+          @click="store.isPreloading ? store.pausePreload() : store.preloadAssets('components')"
         >
-          <FaIcon icon="pause" :size="10" />
-          {{ store.t('menu.preloadPause') || 'Pause' }}
+          <FaIcon :icon="store.isPreloading ? 'pause' : 'play'" :size="10" />
+          {{ store.isPreloading ? (store.t('menu.preloadPause') || 'Pause') : (store.t('menu.preloadContinue') || 'Continue') }}
         </button>
         <button
           class="flex-1 h-7 flex items-center justify-center gap-1.5 rounded text-[9px] font-bold uppercase tracking-wider border transition-all hover:scale-[1.02] active:scale-95"

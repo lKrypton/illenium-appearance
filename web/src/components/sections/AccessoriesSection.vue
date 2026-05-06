@@ -127,7 +127,7 @@ function updateTexture(propId: number, texture: number) {
         <div class="flex items-center gap-3">
           <!-- Premium Icon Badge -->
           <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 bg-theme-card-hover transition-all duration-300">
-            <FaIcon icon="cloud-arrow-down" :size="14" class="text-theme-accent animate-pulse" />
+            <FaIcon icon="cloud-arrow-down" :size="14" class="text-theme-accent" />
           </div>
           <div class="flex flex-col">
             <h2 class="text-[12px] font-bold text-theme-accent uppercase tracking-widest font-display">
@@ -143,6 +143,26 @@ function updateTexture(propId: number, texture: number) {
         </div>
       </div>
       
+      <!-- Pause / Restart buttons -->
+      <div class="px-4 pb-3 flex gap-2">
+        <button
+          class="flex-1 h-7 flex items-center justify-center gap-1.5 rounded text-[9px] font-bold uppercase tracking-wider border transition-all hover:scale-[1.02] active:scale-95"
+          :style="{ color: 'rgba(var(--theme-accent-rgb), 0.7)', borderColor: 'rgba(var(--theme-accent-rgb), 0.2)', background: 'rgba(var(--theme-accent-rgb), 0.05)' }"
+          @click="store.isPreloading ? store.pausePreload() : store.preloadAssets('props')"
+        >
+          <FaIcon :icon="store.isPreloading ? 'pause' : 'play'" :size="10" />
+          {{ store.isPreloading ? (store.t('menu.preloadPause') || 'Pause') : (store.t('menu.preloadContinue') || 'Continue') }}
+        </button>
+        <button
+          class="flex-1 h-7 flex items-center justify-center gap-1.5 rounded text-[9px] font-bold uppercase tracking-wider border transition-all hover:scale-[1.02] active:scale-95"
+          :style="{ color: 'rgba(var(--theme-accent-rgb), 0.7)', borderColor: 'rgba(var(--theme-accent-rgb), 0.2)', background: 'rgba(var(--theme-accent-rgb), 0.05)' }"
+          @click="store.preloadAssets('props')"
+        >
+          <FaIcon icon="rotate-right" :size="10" />
+          {{ store.t('menu.preloadRestart') || 'Restart' }}
+        </button>
+      </div>
+
       <!-- Integrated Progress Track -->
       <div class="w-full h-[5px] bg-white/5 relative">
         <div 

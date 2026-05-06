@@ -108,13 +108,15 @@ Config.UI = {}
 -- Server-side gating still applies (e.g. PreventTrackerRemoval). This list only HIDES tabs,
 -- it cannot enable a tab that the shop config disables.
 Config.UI.Tabs = {
-    creator   = { "model", "heritage", "face", "appearance", "hair", "clothing", "accessories", "tattoos" },
-    ponsonbys = { "clothing", "accessories" },
-    binco     = { "clothing", "accessories" },
-    suburban  = { "clothing", "accessories" },
-    barber    = { "appearance", "hair" },
-    tattoo    = { "tattoos" },
-    wardrobe  = { "clothing", "accessories" },
+    creator          = { "model", "heritage", "face", "appearance", "hair", "clothing", "accessories", "tattoos" },
+    ponsonbys        = { "clothing", "accessories" },
+    binco            = { "clothing", "accessories" },
+    suburban         = { "clothing", "accessories" },
+    barber           = { "appearance", "hair" },
+    tattoo           = { "tattoos" },
+    surgeon          = { "heritage", "face", "appearance", "hair" },
+    clothingroom     = { "clothing", "accessories" },
+    playeroutfitroom = { "clothing", "accessories" },
 }
 
 -- Which sub-sections are visible inside each tab.
@@ -312,7 +314,7 @@ Config.Stores = {
     },
     {
         type = "clothing",
-        shopType = "suburban", -- Vespucci Beach
+        shopType = "binco", -- Vespucci Beach
         coords = vector4(-827.39, -1075.93, 11.33, 294.31),
         size = vector3(4, 4, 4),
         rotation = 45,
@@ -326,7 +328,7 @@ Config.Stores = {
     },
     {
         type = "clothing",
-        shopType = "suburban", -- Suburban – Hawick
+        shopType = "ponsonbys", -- Suburban – Hawick
         coords = vector4(-1445.86, -240.78, 49.82, 36.17),
         size = vector3(4, 4, 4),
         rotation = 45,
@@ -354,7 +356,7 @@ Config.Stores = {
     },
     {
         type = "clothing",
-        shopType = "binco", -- Sandy Shores
+        shopType = "suburban", -- Sandy Shores
         coords = vector4(615.35, 2762.72, 42.09, 170.51),
         size = vector3(4, 4, 4),
         rotation = 45,
@@ -382,7 +384,7 @@ Config.Stores = {
     },
     {
         type = "clothing",
-        shopType = "binco", -- Port of LS / Elysian Island
+        shopType = "suburban", -- Port of LS / Elysian Island
         coords = vector4(-3171.32, 1043.56, 20.86, 334.3),
         size = vector3(4, 4, 4),
         rotation = 45,
@@ -410,21 +412,7 @@ Config.Stores = {
     },
     {
         type = "clothing",
-        shopType = "binco", -- Del Perro / South LS
-        coords = vector4(-1119.24, -1440.6, 5.23, 300.5),
-        size = vector3(4, 4, 4),
-        rotation = 45,
-        usePoly = false,
-        points = {
-            vector3(-1124.5535888672, -1444.5367431641, 5.23),
-            vector3(-1118.7023925781, -1441.0450439453, 5.23),
-            vector3(-1121.2891845703, -1434.8474121094, 5.23),
-            vector3(-1128.4727783203, -1439.8254394531, 5.23)
-        }
-    },
-    {
-        type = "clothing",
-        shopType = "ponsonbys", -- Legion Square / Downtown
+        shopType = "suburban", -- Legion Square / Downtown
         coords = vector4(124.82, -224.36, 54.56, 335.41),
         size = vector3(4, 4, 4),
         rotation = 45,

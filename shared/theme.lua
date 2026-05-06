@@ -18,6 +18,7 @@
 -- ════════════════════════════════════════════════════════════════════
 
 Config.UI.Themes = {
+    -- ── Character creator ──────────────────────────────────────────
     creator = {
         accent        = "#ff3131",
         accentRgb     = "255, 49, 49",
@@ -32,6 +33,7 @@ Config.UI.Themes = {
         textSecondary = "#d4d4d8",
         textMuted     = "#71717a",
     },
+    -- ── Clothing stores ────────────────────────────────────────────
     ponsonbys = {
         accent        = "#d4af37",
         accentRgb     = "212, 175, 55",
@@ -74,6 +76,7 @@ Config.UI.Themes = {
         textSecondary = "#eab308",
         textMuted     = "#9ca3af",
     },
+    -- ── Service shops ──────────────────────────────────────────────
     barber = {
         accent        = "#d97706",
         accentRgb     = "217, 119, 6",
@@ -102,7 +105,36 @@ Config.UI.Themes = {
         textSecondary = "#fb923c",
         textMuted     = "#a1a1aa",
     },
-    wardrobe = {
+    surgeon = {
+        accent        = "#06b6d4",
+        accentRgb     = "6, 182, 212",
+        fontSans      = "Inter",
+        fontDisplay   = "Rajdhani",
+        panelBaseHex  = "#020d12",
+        panelOpacity  = 0.82,
+        panelBlur     = 20,
+        roundedPanel  = "1.5rem",
+        roundedCard   = "1rem",
+        textPrimary   = "#ecfeff",
+        textSecondary = "#a5f3fc",
+        textMuted     = "#64748b",
+    },
+    -- ── Outfit / clothing rooms ─────────────────────────────────────
+    clothingroom = {
+        accent        = "#6366f1",
+        accentRgb     = "99, 102, 241",
+        fontSans      = "Outfit",
+        fontDisplay   = "Rajdhani",
+        panelBaseHex  = "#08080f",
+        panelOpacity  = 0.80,
+        panelBlur     = 18,
+        roundedPanel  = "1.5rem",
+        roundedCard   = "1rem",
+        textPrimary   = "#f8fafc",
+        textSecondary = "#c7d2fe",
+        textMuted     = "#6b7280",
+    },
+    playeroutfitroom = {
         accent        = "#14b8a6",
         accentRgb     = "20, 184, 166",
         fontSans      = "Outfit",
@@ -117,3 +149,36 @@ Config.UI.Themes = {
         textMuted     = "#a3a3a3",
     },
 }
+
+-- ════════════════════════════════════════════════════════════════════
+-- 🖌️  CUSTOM THEMES  (add your own shop themes here)
+-- ════════════════════════════════════════════════════════════════════
+-- Each key should match the shopType value you use in Config.Stores
+-- (e.g. shopType = "mymall"). Keys defined here OVERRIDE the
+-- built-in themes above if the names collide.
+--
+-- Example:
+--   mymall = {
+--       accent        = "#e879f9",
+--       accentRgb     = "232, 121, 249",
+--       fontSans      = "Outfit",
+--       fontDisplay   = "Rajdhani",
+--       panelBaseHex  = "#130a1a",
+--       panelOpacity  = 0.80,
+--       panelBlur     = 18,
+--       roundedPanel  = "1.5rem",
+--       roundedCard   = "1rem",
+--       textPrimary   = "#ffffff",
+--       textSecondary = "#f0abfc",
+--       textMuted     = "#a1a1aa",
+--   },
+-- ════════════════════════════════════════════════════════════════════
+Config.UI.CustomThemes = {
+    -- Add your custom themes here
+}
+
+-- Auto-merge CustomThemes into the main Themes table.
+-- Custom entries override built-in ones with the same key.
+for k, v in pairs(Config.UI.CustomThemes) do
+    Config.UI.Themes[k] = v
+end

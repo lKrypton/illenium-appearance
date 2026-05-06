@@ -304,7 +304,10 @@ Locales["tr"] = {
         loading = "Yükleniyor",
         synchronizing = "Veriler Senkronize Ediliyor...",
         preloadPause = "Duraklat",
-        preloadRestart = "Yeniden Başlat"
+        preloadContinue = "Devam Et",
+        preloadRestart = "Yeniden Başlat",
+        exit = "İptal Et",
+        save = "Kaydet"
     },
 
     camera = {

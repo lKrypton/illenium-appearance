@@ -304,7 +304,10 @@ Locales["en"] = {
         loading = "Loading",
         synchronizing = "Synchronizing Assets...",
         preloadPause = "Pause",
-        preloadRestart = "Restart"
+        preloadContinue = "Continue",
+        preloadRestart = "Restart",
+        exit = "Exit",
+        save = "Save"
     },
 
     camera = {
