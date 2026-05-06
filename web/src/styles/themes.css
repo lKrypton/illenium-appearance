@@ -1,0 +1,345 @@
+/* Theme variables for Illenium Appearance V2 */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Bebas+Neue&family=Outfit:wght@400;700&family=Rajdhani:wght@400;700&family=Roboto:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Pirata+One&family=Prata&family=Abril+Fatface&family=Archivo+Black&family=Staatliches&family=Kanit:wght@900&family=Syncopate:wght@400;700&family=Syne:wght@400;800&family=Indie+Flower&family=Metamorphous&display=swap');
+
+/* Default Theme (Fallback / Creator) */
+:root,
+.theme-creator {
+  --theme-font-sans: 'Outfit', sans-serif;
+  --theme-font-display: 'Rajdhani', sans-serif;
+
+  --theme-bg-base: #020202;
+  --theme-bg-panel: rgba(8, 8, 8, 0.75);
+  --theme-bg-card: rgba(0, 0, 0, 0.25);
+  --theme-bg-card-hover: rgba(0, 0, 0, 0.4);
+  --theme-bg-card-active: rgba(0, 0, 0, 0.5);
+
+  --theme-border-radius-panel: 1.5rem;
+  --theme-border-radius-card: 1rem;
+
+  --theme-accent: #ff3131;
+  --theme-accent-rgb: 255, 49, 49;
+  --theme-accent-hover: #e62020;
+  --theme-accent-border: rgba(255, 49, 49, 0.4);
+  --theme-accent-bg: rgba(255, 49, 49, 0.12);
+
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #d4d4d8;
+  --theme-text-muted: #71717a;
+
+  --theme-border-base: rgba(255, 255, 255, 0.08);
+}
+
+.theme-creator .font-display:not(h1) {
+  font-size: 1em !important;
+}
+
+.theme-creator h1 {
+  font-size: 1.875rem !important;
+}
+
+/* Ponsonbys (Luxury) */
+.theme-ponsonbys {
+  --theme-accent: #d4af37 !important;
+  --theme-accent-rgb: 212, 175, 55 !important;
+  --theme-bg-base: #020202 !important;
+  --theme-bg-panel: rgba(5, 5, 5, 0.75) !important;
+  --theme-bg-card: rgba(0, 0, 0, 0.3) !important;
+  --theme-bg-card-hover: rgba(0, 0, 0, 0.45) !important;
+  --theme-text-primary: #f8fafc !important;
+  --theme-text-secondary: #9ca3af !important;
+  --theme-text-muted: #6b7280 !important;
+  --theme-border-base: rgba(156, 163, 175, 0.15) !important;
+  --theme-accent-border: rgba(212, 175, 55, 0.4) !important;
+  --theme-font-sans: 'Outfit', sans-serif !important;
+  --theme-font-display: 'Metamorphous', cursive !important;
+  --theme-border-radius-panel: 1.5rem !important;
+  --theme-border-radius-card: 1rem !important;
+}
+
+.theme-ponsonbys .font-display:not(h1) {
+  font-size: 0.8em !important;
+}
+
+.theme-ponsonbys h1 {
+  font-size: 2.0rem !important;
+}
+
+/* Binco (Budget) */
+.theme-binco {
+  --theme-accent: #22c55e !important;
+  --theme-accent-rgb: 34, 197, 94 !important;
+  --theme-bg-base: #050505 !important;
+  --theme-bg-panel: rgba(10, 10, 10, 0.75) !important;
+  --theme-bg-card: rgba(0, 0, 0, 0.25) !important;
+  --theme-bg-card-hover: rgba(0, 0, 0, 0.4) !important;
+  --theme-text-primary: #ffffff !important;
+  --theme-text-secondary: #f97316 !important;
+  --theme-text-muted: #9ca3af !important;
+  --theme-border-base: rgba(34, 197, 94, 0.15) !important;
+  --theme-accent-border: rgba(34, 197, 94, 0.4) !important;
+  --theme-font-display: 'Indie Flower', cursive !important;
+  --theme-font-sans: 'Inter', sans-serif !important;
+  --theme-border-radius-panel: 1.5rem !important;
+  --theme-border-radius-card: 1rem !important;
+  font-weight: 400;
+}
+
+.theme-binco .font-display:not(h1) {
+  font-size: 0.9em !important;
+}
+
+.theme-binco h1 {
+  font-size: 2.875rem !important;
+}
+
+/* Suburban (Street/Military) */
+.theme-suburban {
+  --theme-accent: #3b82f6 !important;
+  --theme-accent-rgb: 59, 130, 246 !important;
+  --theme-bg-base: #050505 !important;
+  --theme-bg-panel: rgba(10, 12, 16, 0.75) !important;
+  --theme-bg-card: rgba(0, 0, 0, 0.25) !important;
+  --theme-bg-card-hover: rgba(0, 0, 0, 0.4) !important;
+  --theme-text-primary: #f8fafc !important;
+  --theme-text-secondary: #eab308 !important;
+  --theme-text-muted: #9ca3af !important;
+  --theme-border-base: rgba(59, 130, 246, 0.15) !important;
+  --theme-accent-border: rgba(59, 130, 246, 0.4) !important;
+  --theme-font-sans: 'Roboto', sans-serif !important;
+  --theme-font-display: 'Staatliches', cursive !important;
+  --theme-border-radius-panel: 1.5rem !important;
+  --theme-border-radius-card: 1rem !important;
+}
+
+.theme-suburban .font-display:not(h1) {
+  font-size: 1.0em !important;
+}
+
+.theme-suburban h1 {
+  font-size: 2.575rem !important;
+}
+
+/* Barber Shop */
+.theme-barber {
+  --theme-accent: #d97706 !important;
+  --theme-accent-rgb: 217, 119, 6 !important;
+  --theme-bg-base: #050505 !important;
+  --theme-bg-panel: rgba(15, 10, 8, 0.75) !important;
+  --theme-bg-card: rgba(0, 0, 0, 0.25) !important;
+  --theme-bg-card-hover: rgba(0, 0, 0, 0.4) !important;
+  --theme-text-primary: #fff7ed !important;
+  --theme-text-secondary: #d6d3d1 !important;
+  --theme-text-muted: #78716c !important;
+  --theme-border-base: rgba(217, 119, 6, 0.2) !important;
+  --theme-accent-border: rgba(217, 119, 6, 0.5) !important;
+  --theme-font-sans: 'Outfit', sans-serif !important;
+  --theme-font-display: 'Abril Fatface', cursive !important;
+  --theme-border-radius-panel: 1.5rem !important;
+  --theme-border-radius-card: 1rem !important;
+}
+
+.theme-barber .font-display:not(h1) {
+  font-size: 0.9em !important;
+}
+
+.theme-barber h1 {
+  font-size: 2.3rem !important;
+}
+
+/* Tattoo Parlor */
+.theme-tattoo {
+  --theme-accent: #dc2626 !important;
+  --theme-accent-rgb: 220, 38, 38 !important;
+  --theme-bg-base: #050505 !important;
+  --theme-bg-panel: rgba(5, 5, 5, 0.75) !important;
+  --theme-bg-card: rgba(0, 0, 0, 0.25) !important;
+  --theme-bg-card-hover: rgba(0, 0, 0, 0.4) !important;
+  --theme-text-primary: #f1f5f9 !important;
+  --theme-text-secondary: #fb923c !important;
+  --theme-text-muted: #a1a1aa !important;
+  --theme-border-base: rgba(220, 38, 38, 0.15) !important;
+  --theme-accent-border: rgba(220, 38, 38, 0.4) !important;
+  --theme-font-sans: 'Outfit', sans-serif !important;
+  --theme-font-display: 'Pirata One', cursive !important;
+  --theme-border-radius-panel: 1.5rem !important;
+  --theme-border-radius-card: 1rem !important;
+}
+
+.theme-tattoo .font-display:not(h1) {
+  font-size: 1em !important;
+}
+
+.theme-tattoo h1 {
+  font-size: 2.5rem !important;
+}
+
+/* Wardrobe */
+.theme-wardrobe {
+  --theme-accent: #14b8a6 !important;
+  --theme-accent-rgb: 20, 184, 166 !important;
+  --theme-bg-base: #050505 !important;
+  --theme-bg-panel: rgba(15, 10, 25, 0.75) !important;
+  --theme-bg-card: rgba(0, 0, 0, 0.25) !important;
+  --theme-text-primary: #ffffff !important;
+  --theme-text-secondary: #5eead4 !important;
+  --theme-text-muted: #a3a3a3 !important;
+  --theme-accent-border: rgba(20, 184, 166, 0.4) !important;
+  --theme-font-sans: 'Outfit', sans-serif !important;
+  --theme-font-display: 'Rajdhani', sans-serif !important;
+  --theme-border-radius-panel: 1.5rem !important;
+  --theme-border-radius-card: 1rem !important;
+}
+
+.theme-wardrobe .font-display:not(h1) {
+  font-size: 1em !important;
+}
+
+.theme-wardrobe h1 {
+  font-size: 1.875rem !important;
+}
+
+/* Global Transitions & Layout — no background-color to prevent CEF flickering */
+* {
+  transition: border-color 0.2s ease, color 0.15s ease, box-shadow 0.2s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 10px 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--theme-accent-rgb), 0.6);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--theme-accent);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Transitions */
+.section-fade-enter-active,
+.section-fade-leave-active {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.section-fade-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.section-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.panel-slide-enter-active,
+.panel-slide-leave-active {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.panel-slide-enter-from,
+.panel-slide-leave-to {
+  opacity: 0;
+  transform: translateX(40px) scale(0.95);
+}
+
+
+
+
+
+/* --- THEME SPECIALIZED OVERRIDES (Moved from components) --- */
+
+/* RangeSlider Overrides */
+.theme-tattoo .range-slider-track {
+  height: 4px !important;
+  border-radius: 2px !important;
+  background: rgba(34, 211, 238, 0.05) !important;
+}
+
+.theme-tattoo .range-slider-thumb {
+  border-radius: 4px !important;
+  width: 12px !important;
+  height: 18px !important;
+}
+
+.theme-ponsonbys .range-slider-track {
+  height: 2px !important;
+  border-radius: 0 !important;
+  background: rgba(234, 179, 8, 0.2) !important;
+}
+
+.theme-ponsonbys .range-slider-thumb {
+  border-radius: 0 !important;
+  width: 8px !important;
+  height: 18px !important;
+  background: var(--theme-accent) !important;
+  border: none !important;
+}
+
+.theme-creator .range-slider-track {
+  height: 8px !important;
+  border: 1px solid rgba(255, 49, 49, 0.15) !important;
+}
+
+/* ColorPicker Overrides */
+.theme-creator .theme-aware-swatch {
+  border-radius: 999px !important;
+  border-color: rgba(255, 49, 49, 0.1) !important;
+}
+
+.theme-creator .theme-aware-swatch.active-swatch {
+  border-color: #ff3131 !important;
+  /* Bright Red restored */
+  box-shadow: none !important;
+}
+
+.theme-tattoo .theme-aware-swatch {
+  border-radius: 999px !important;
+  border-color: rgba(34, 211, 238, 0.15) !important;
+}
+
+.theme-tattoo .theme-aware-swatch.active-swatch {
+  border-color: #22d3ee !important;
+  /* Bright Cyan restored */
+  box-shadow: none !important;
+}
+
+.theme-ponsonbys .theme-aware-swatch {
+  border-radius: 0 !important;
+  width: 28px !important;
+  height: 14px !important;
+}
+
+/* NumberStepper Overrides */
+.theme-creator .theme-aware-stepper {
+  border-radius: 1rem !important;
+  border-color: rgba(255, 49, 49, 0.2) !important;
+}
+
+.theme-tattoo .theme-aware-stepper {
+  border-radius: 0.5rem !important;
+  background: rgba(34, 211, 238, 0.03) !important;
+  border-color: rgba(34, 211, 238, 0.2) !important;
+}
+
+.theme-ponsonbys .theme-aware-stepper {
+  border-radius: var(--theme-border-radius-card) !important;
+  border-color: rgba(234, 179, 8, 0.3) !important;
+  background: rgba(234, 179, 8, 0.05) !important;
+}
+
+.theme-barber .theme-aware-stepper {
+  border-radius: 0.75rem !important;
+  border-color: rgba(132, 204, 22, 0.2) !important;
+}
