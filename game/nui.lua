@@ -8,7 +8,7 @@ RegisterNUICallback("appearance_get_locales", function(_, cb)
     if not Locales[lang] then
         lang = "en"
     end
-    cb(Locales[lang].UI)
+    cb(Locales[lang])
 end)
 
 RegisterNUICallback("appearance_get_settings", function(_, cb)

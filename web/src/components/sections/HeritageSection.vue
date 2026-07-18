@@ -43,21 +43,21 @@ function getStep(key: string) {
 <template>
   <div class="space-y-2">
     <h2 class="text-[14px] font-bold text-white uppercase tracking-widest font-display">
-      {{ store.t('headBlend.title') || 'Kalıtım' }}
+      {{ store.t('headBlend.title') }}
     </h2>
 
     <!-- Face Shape -->
-    <SectionCard :title="store.t('headBlend.shape.title') || 'Yüz'" :icon="icons.heritage.shape" :default-open="true">
+    <SectionCard :title="store.t('headBlend.shape.title')" :icon="icons.heritage.shape" :default-open="true">
       <div class="grid grid-cols-2 gap-3 mt-1.5 mb-2">
         <NumberStepper
-          :label="store.t('headBlend.shape.firstOption') || 'Baba'"
+          :label="store.t('headBlend.shape.firstOption')"
           v-model="local.shapeFirst"
           :min="getMin('shapeFirst')"
           :max="getMax('shapeFirst')"
           @update:model-value="apply()"
         />
         <NumberStepper
-          :label="store.t('headBlend.shape.secondOption') || 'Anne'"
+          :label="store.t('headBlend.shape.secondOption')"
           v-model="local.shapeSecond"
           :min="getMin('shapeSecond')"
           :max="getMax('shapeSecond')"
@@ -65,7 +65,7 @@ function getStep(key: string) {
         />
       </div>
       <RangeSlider
-        :label="store.t('headBlend.shape.mix') || 'Karışım'"
+        :label="store.t('headBlend.shape.mix')"
         v-model="local.shapeMix"
         :min="0"
         :max="1"
@@ -75,17 +75,17 @@ function getStep(key: string) {
     </SectionCard>
 
     <!-- Skin Tone -->
-    <SectionCard :title="store.t('headBlend.skin.title') || 'Ten'" :icon="icons.heritage.skin" :default-open="true">
+    <SectionCard :title="store.t('headBlend.skin.title')" :icon="icons.heritage.skin" :default-open="true">
       <div class="grid grid-cols-2 gap-3 mt-1.5 mb-2">
         <NumberStepper
-          :label="store.t('headBlend.skin.firstOption') || 'Baba'"
+          :label="store.t('headBlend.skin.firstOption')"
           v-model="local.skinFirst"
           :min="getMin('skinFirst')"
           :max="getMax('skinFirst')"
           @update:model-value="apply()"
         />
         <NumberStepper
-          :label="store.t('headBlend.skin.secondOption') || 'Anne'"
+          :label="store.t('headBlend.skin.secondOption')"
           v-model="local.skinSecond"
           :min="getMin('skinSecond')"
           :max="getMax('skinSecond')"
@@ -93,7 +93,7 @@ function getStep(key: string) {
         />
       </div>
       <RangeSlider
-        :label="store.t('headBlend.skin.mix') || 'Karışım'"
+        :label="store.t('headBlend.skin.mix')"
         v-model="local.skinMix"
         :min="0"
         :max="1"
@@ -103,17 +103,17 @@ function getStep(key: string) {
     </SectionCard>
 
     <!-- Race/Third Mix -->
-    <SectionCard :title="store.t('headBlend.race.title') || 'Irk'" :icon="icons.heritage.race" :default-open="true">
+    <SectionCard :title="store.t('headBlend.race.title')" :icon="icons.heritage.race" :default-open="true">
       <div class="grid grid-cols-2 gap-3 mt-1.5 mb-2">
         <NumberStepper
-          :label="store.t('headBlend.race.shape') || 'Yüz'"
+          :label="store.t('headBlend.race.shape')"
           v-model="local.shapeThird"
           :min="getMin('shapeThird')"
           :max="getMax('shapeThird')"
           @update:model-value="apply()"
         />
         <NumberStepper
-          :label="store.t('headBlend.race.skin') || 'Ten'"
+          :label="store.t('headBlend.race.skin')"
           v-model="local.skinThird"
           :min="getMin('skinThird')"
           :max="getMax('skinThird')"
@@ -121,7 +121,7 @@ function getStep(key: string) {
         />
       </div>
       <RangeSlider
-        :label="store.t('headBlend.race.mix') || 'Karışım'"
+        :label="store.t('headBlend.race.mix')"
         v-model="local.thirdMix"
         :min="0"
         :max="1"

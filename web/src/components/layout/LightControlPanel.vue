@@ -53,9 +53,9 @@ function resetDefaults() {
       </div>
       <div class="flex flex-col">
         <h3 class="text-sm font-display font-bold text-theme-text-primary tracking-widest uppercase">
-          {{ store.t('menu.lightSettings') || 'Studio Lighting' }}
+          {{ store.t('menu.lightSettings') }}
         </h3>
-        <span class="text-[9px] text-theme-text-muted uppercase tracking-tighter opacity-70">{{ store.t('menu.lightSubtitle') || 'Professional Lighting Rig' }}</span>
+        <span class="text-[9px] text-theme-text-muted uppercase tracking-tighter opacity-70">{{ store.t('menu.lightSubtitle') }}</span>
       </div>
     </div>
 
@@ -63,7 +63,7 @@ function resetDefaults() {
     <div class="space-y-4">
       <div class="flex items-center gap-2">
         <div class="w-1 h-3 bg-theme-accent rounded-full"></div>
-        <span class="text-[10px] font-bold text-theme-text-muted uppercase tracking-wider">{{ store.t('menu.lightPresets') || 'Quick Presets' }}</span>
+        <span class="text-[10px] font-bold text-theme-text-muted uppercase tracking-wider">{{ store.t('menu.lightPresets') }}</span>
       </div>
       <div class="grid grid-cols-2 gap-3">
         <button
@@ -91,7 +91,7 @@ function resetDefaults() {
       <!-- Intensity -->
       <div class="space-y-3">
         <div class="flex justify-between items-center">
-          <span class="text-[10px] font-bold text-theme-text-secondary uppercase tracking-tight">{{ store.t('menu.lightIntensity') || 'Intensity' }}</span>
+          <span class="text-[10px] font-bold text-theme-text-secondary uppercase tracking-tight">{{ store.t('menu.lightIntensity') }}</span>
           <span class="value-badge px-2 py-0.5 rounded text-[10px] font-mono text-theme-accent border border-theme-accent-border">
             {{ store.lightConfig.intensity.toFixed(1) }}
           </span>
@@ -107,7 +107,7 @@ function resetDefaults() {
       <!-- Angle -->
       <div class="space-y-3">
         <div class="flex justify-between items-center">
-          <span class="text-[10px] font-bold text-theme-text-secondary uppercase tracking-tight">{{ store.t('menu.lightRotation') || 'Rotation' }}</span>
+          <span class="text-[10px] font-bold text-theme-text-secondary uppercase tracking-tight">{{ store.t('menu.lightRotation') }}</span>
           <span class="px-2 py-0.5 rounded bg-theme-accent/10 text-[10px] font-mono text-theme-accent border border-theme-accent-border">{{ store.lightConfig.angle }}°</span>
         </div>
         <input 
@@ -121,7 +121,7 @@ function resetDefaults() {
       <!-- Height -->
       <div class="space-y-3">
         <div class="flex justify-between items-center">
-          <span class="text-[10px] font-bold text-theme-text-secondary uppercase tracking-tight">{{ store.t('menu.lightHeight') || 'Height' }}</span>
+          <span class="text-[10px] font-bold text-theme-text-secondary uppercase tracking-tight">{{ store.t('menu.lightHeight') }}</span>
           <span class="value-badge px-2 py-0.5 rounded text-[10px] font-mono text-theme-accent border border-theme-accent-border">
             {{ store.lightConfig.height.toFixed(1) }}m
           </span>
@@ -137,7 +137,7 @@ function resetDefaults() {
       <!-- Distance -->
       <div class="space-y-3">
         <div class="flex justify-between items-center">
-          <span class="text-[10px] font-bold text-theme-text-secondary uppercase tracking-tight">{{ store.t('menu.lightDistance') || 'Distance' }}</span>
+          <span class="text-[10px] font-bold text-theme-text-secondary uppercase tracking-tight">{{ store.t('menu.lightDistance') }}</span>
           <span class="value-badge px-2 py-0.5 rounded text-[10px] font-mono text-theme-accent border border-theme-accent-border">
             {{ store.lightConfig.distance.toFixed(1) }}m
           </span>
@@ -157,7 +157,7 @@ function resetDefaults() {
       @click="resetDefaults"
     >
       <FaIcon icon="rotate-left" :size="12" />
-      {{ store.t('menu.restoreDefaults') || 'Reset Defaults' }}
+      {{ store.t('menu.restoreDefaults') }}
     </button>
   </div>
 </template>

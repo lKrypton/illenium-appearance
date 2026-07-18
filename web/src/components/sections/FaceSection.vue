@@ -31,65 +31,64 @@ function apply() {
 
 interface FeatureGroup {
   titleKey: string
-  fallback: string
   icon: string
-  items: { key: keyof FaceFeatures; labelKey: string; fallback: string }[]
+  items: { key: keyof FaceFeatures; labelKey: string }[]
 }
 
 const groups: FeatureGroup[] = [
   {
-    titleKey: 'faceFeatures.nose.title', fallback: 'Nose', icon: icons.face.nose,
+    titleKey: 'faceFeatures.nose.title', icon: icons.face.nose,
     items: [
-      { key: 'noseWidth', labelKey: 'faceFeatures.nose.width', fallback: 'Width' },
-      { key: 'nosePeakHigh', labelKey: 'faceFeatures.nose.height', fallback: 'Height' },
-      { key: 'nosePeakSize', labelKey: 'faceFeatures.nose.size', fallback: 'Size' },
-      { key: 'noseBoneHigh', labelKey: 'faceFeatures.nose.boneHeight', fallback: 'Bone Height' },
-      { key: 'nosePeakLowering', labelKey: 'faceFeatures.nose.peakHeight', fallback: 'Peak Height' },
-      { key: 'noseBoneTwist', labelKey: 'faceFeatures.nose.boneTwist', fallback: 'Bone Twist' },
+      { key: 'noseWidth', labelKey: 'faceFeatures.nose.width' },
+      { key: 'nosePeakHigh', labelKey: 'faceFeatures.nose.height' },
+      { key: 'nosePeakSize', labelKey: 'faceFeatures.nose.size' },
+      { key: 'noseBoneHigh', labelKey: 'faceFeatures.nose.boneHeight' },
+      { key: 'nosePeakLowering', labelKey: 'faceFeatures.nose.peakHeight' },
+      { key: 'noseBoneTwist', labelKey: 'faceFeatures.nose.boneTwist' },
     ],
   },
   {
-    titleKey: 'faceFeatures.eyebrows.title', fallback: 'Eyebrows', icon: icons.face.eyebrows,
+    titleKey: 'faceFeatures.eyebrows.title', icon: icons.face.eyebrows,
     items: [
-      { key: 'eyeBrownHigh', labelKey: 'faceFeatures.eyebrows.height', fallback: 'Height' },
-      { key: 'eyeBrownForward', labelKey: 'faceFeatures.eyebrows.depth', fallback: 'Depth' },
+      { key: 'eyeBrownHigh', labelKey: 'faceFeatures.eyebrows.height' },
+      { key: 'eyeBrownForward', labelKey: 'faceFeatures.eyebrows.depth' },
     ],
   },
   {
-    titleKey: 'faceFeatures.cheeks.title', fallback: 'Cheeks', icon: icons.face.cheeks,
+    titleKey: 'faceFeatures.cheeks.title', icon: icons.face.cheeks,
     items: [
-      { key: 'cheeksBoneHigh', labelKey: 'faceFeatures.cheeks.boneHeight', fallback: 'Bone Height' },
-      { key: 'cheeksBoneWidth', labelKey: 'faceFeatures.cheeks.boneWidth', fallback: 'Bone Width' },
-      { key: 'cheeksWidth', labelKey: 'faceFeatures.cheeks.width', fallback: 'Width' },
+      { key: 'cheeksBoneHigh', labelKey: 'faceFeatures.cheeks.boneHeight' },
+      { key: 'cheeksBoneWidth', labelKey: 'faceFeatures.cheeks.boneWidth' },
+      { key: 'cheeksWidth', labelKey: 'faceFeatures.cheeks.width' },
     ],
   },
   {
-    titleKey: 'faceFeatures.eyesAndMouth.title', fallback: 'Eyes & Mouth', icon: icons.face.eyesAndMouth,
+    titleKey: 'faceFeatures.eyesAndMouth.title', icon: icons.face.eyesAndMouth,
     items: [
-      { key: 'eyesOpening', labelKey: 'faceFeatures.eyesAndMouth.eyesOpening', fallback: 'Eyes Opening' },
-      { key: 'lipsThickness', labelKey: 'faceFeatures.eyesAndMouth.lipsThickness', fallback: 'Lips Thickness' },
+      { key: 'eyesOpening', labelKey: 'faceFeatures.eyesAndMouth.eyesOpening' },
+      { key: 'lipsThickness', labelKey: 'faceFeatures.eyesAndMouth.lipsThickness' },
     ],
   },
   {
-    titleKey: 'faceFeatures.jaw.title', fallback: 'Jaw', icon: icons.face.jaw,
+    titleKey: 'faceFeatures.jaw.title', icon: icons.face.jaw,
     items: [
-      { key: 'jawBoneWidth', labelKey: 'faceFeatures.jaw.width', fallback: 'Width' },
-      { key: 'jawBoneBackSize', labelKey: 'faceFeatures.jaw.size', fallback: 'Size' },
+      { key: 'jawBoneWidth', labelKey: 'faceFeatures.jaw.width' },
+      { key: 'jawBoneBackSize', labelKey: 'faceFeatures.jaw.size' },
     ],
   },
   {
-    titleKey: 'faceFeatures.chin.title', fallback: 'Chin', icon: icons.face.chin,
+    titleKey: 'faceFeatures.chin.title', icon: icons.face.chin,
     items: [
-      { key: 'chinBoneLowering', labelKey: 'faceFeatures.chin.lowering', fallback: 'Lowering' },
-      { key: 'chinBoneLenght', labelKey: 'faceFeatures.chin.length', fallback: 'Length' },
-      { key: 'chinBoneSize', labelKey: 'faceFeatures.chin.size', fallback: 'Size' },
-      { key: 'chinHole', labelKey: 'faceFeatures.chin.hole', fallback: 'Hole Size' },
+      { key: 'chinBoneLowering', labelKey: 'faceFeatures.chin.lowering' },
+      { key: 'chinBoneLenght', labelKey: 'faceFeatures.chin.length' },
+      { key: 'chinBoneSize', labelKey: 'faceFeatures.chin.size' },
+      { key: 'chinHole', labelKey: 'faceFeatures.chin.hole' },
     ],
   },
   {
-    titleKey: 'faceFeatures.neck.title', fallback: 'Neck', icon: icons.face.neck,
+    titleKey: 'faceFeatures.neck.title', icon: icons.face.neck,
     items: [
-      { key: 'neckThickness', labelKey: 'faceFeatures.neck.thickness', fallback: 'Thickness' },
+      { key: 'neckThickness', labelKey: 'faceFeatures.neck.thickness' },
     ],
   },
 ]
@@ -98,20 +97,20 @@ const groups: FeatureGroup[] = [
 <template>
   <div class="space-y-2">
     <h2 class="text-[14px] font-bold text-white uppercase tracking-widest font-display">
-      {{ store.t('faceFeatures.title') || 'Face Features' }}
+      {{ store.t('faceFeatures.title') }}
     </h2>
 
     <SectionCard
       v-for="group in groups"
       :key="group.titleKey"
-      :title="store.t(group.titleKey) || group.fallback"
+      :title="store.t(group.titleKey)"
       :icon="group.icon"
       :default-open="true"
     >
       <RangeSlider
         v-for="item in group.items"
         :key="item.key"
-        :label="store.t(item.labelKey) || item.fallback"
+        :label="store.t(item.labelKey)"
         v-model="local[item.key]"
         :min="-1"
         :max="1"

@@ -14,17 +14,17 @@ const componentConfig = computed(() => store.config.componentConfig)
 
 // ── Section List ──
 // component_id → configKey mapping (matches reference code order)
-const componentItems: { id: number; configKey: string; localeKey: string; fallback: string; icon: string }[] = [
-  { id: 11, configKey: 'jackets', localeKey: 'components.jackets', fallback: 'Jackets', icon: icons.clothing.jackets },
-  { id: 8, configKey: 'shirts', localeKey: 'components.shirt', fallback: 'Shirts', icon: icons.clothing.shirts },
-  { id: 3, configKey: 'upperBody', localeKey: 'components.upperBody', fallback: 'Hands', icon: icons.clothing.upperBody },
-  { id: 4, configKey: 'lowerBody', localeKey: 'components.lowerBody', fallback: 'Legs', icon: icons.clothing.lowerBody },
-  { id: 6, configKey: 'shoes', localeKey: 'components.shoes', fallback: 'Shoes', icon: icons.clothing.shoes },
-  { id: 10, configKey: 'decals', localeKey: 'components.decals', fallback: 'Decals', icon: icons.clothing.decals },
-  { id: 1, configKey: 'masks', localeKey: 'components.mask', fallback: 'Masks', icon: icons.clothing.masks },
-  { id: 9, configKey: 'bodyArmor', localeKey: 'components.bodyArmor', fallback: 'Body Armor', icon: icons.clothing.bodyArmor },
-  { id: 5, configKey: 'bags', localeKey: 'components.bags', fallback: 'Bags', icon: icons.clothing.bags },
-  { id: 7, configKey: 'scarfAndChains', localeKey: 'components.scarfAndChains', fallback: 'Scarf / Chains', icon: icons.clothing.scarfAndChains },
+const componentItems: { id: number; configKey: string; localeKey: string; icon: string }[] = [
+  { id: 11, configKey: 'jackets', localeKey: 'components.jackets', icon: icons.clothing.jackets },
+  { id: 8, configKey: 'shirts', localeKey: 'components.shirt', icon: icons.clothing.shirts },
+  { id: 3, configKey: 'upperBody', localeKey: 'components.upperBody', icon: icons.clothing.upperBody },
+  { id: 4, configKey: 'lowerBody', localeKey: 'components.lowerBody', icon: icons.clothing.lowerBody },
+  { id: 6, configKey: 'shoes', localeKey: 'components.shoes', icon: icons.clothing.shoes },
+  { id: 10, configKey: 'decals', localeKey: 'components.decals', icon: icons.clothing.decals },
+  { id: 1, configKey: 'masks', localeKey: 'components.mask', icon: icons.clothing.masks },
+  { id: 9, configKey: 'bodyArmor', localeKey: 'components.bodyArmor', icon: icons.clothing.bodyArmor },
+  { id: 5, configKey: 'bags', localeKey: 'components.bags', icon: icons.clothing.bags },
+  { id: 7, configKey: 'scarfAndChains', localeKey: 'components.scarfAndChains', icon: icons.clothing.scarfAndChains },
 ]
 
 // Filter items by componentConfig flags AND favorites if active
@@ -57,7 +57,7 @@ const visibleItems = computed(() => {
 })
 
 function getLabel(item: typeof componentItems[0]): string {
-  return store.t(item.localeKey) || item.fallback
+  return store.t(item.localeKey)
 }
 
 function updateDrawable(componentId: number, drawable: number) {
@@ -85,7 +85,7 @@ function getSetting(id: number) {
     <!-- Header -->
     <div class="flex items-center justify-between mb-6">
       <h2 class="text-[14px] font-bold text-theme-text-secondary uppercase tracking-widest font-display">
-        {{ store.t('components.title') || 'Clothing' }}
+        {{ store.t('components.title') }}
       </h2>
       <div class="flex items-center gap-2">
         <button
@@ -104,7 +104,7 @@ function getSetting(id: number) {
             class="mr-2" 
             :class="store.isFilterFavoritesActive ? 'text-white' : 'text-theme-accent'" 
           />
-          {{ store.t('menu.favorites') || 'Favorites' }}
+          {{ store.t('menu.favorites') }}
         </button>
 
         <button 
@@ -122,7 +122,7 @@ function getSetting(id: number) {
             class="mr-2" 
             :class="!store.isPreloading ? 'text-theme-accent' : 'text-red-500'" 
           />
-          {{ store.isPreloading ? (store.t('menu.cancelPreload') || 'Cancel') : (store.t('menu.startPreload') || 'Preload') }}
+          {{ store.isPreloading ? (store.t('menu.cancelPreload')) : (store.t('menu.startPreload')) }}
         </button>
       </div>
     </div>
@@ -142,10 +142,10 @@ function getSetting(id: number) {
           </div>
           <div class="flex flex-col">
             <h2 class="text-[12px] font-bold text-theme-accent uppercase tracking-widest font-display">
-              {{ store.preloadItem }} {{ store.t('menu.loading') || 'Loading' }}
+              {{ store.preloadItem }} {{ store.t('menu.loading') }}
             </h2>
             <span class="text-[9px] text-theme-text-muted uppercase font-bold tracking-tighter opacity-40">
-              {{ store.t('menu.synchronizing') || 'Synchronizing Assets...' }}
+              {{ store.t('menu.synchronizing') }}
             </span>
           </div>
         </div>
@@ -162,7 +162,7 @@ function getSetting(id: number) {
           @click="store.isPreloading ? store.pausePreload() : store.preloadAssets('components')"
         >
           <FaIcon :icon="store.isPreloading ? 'pause' : 'play'" :size="10" />
-          {{ store.isPreloading ? (store.t('menu.preloadPause') || 'Pause') : (store.t('menu.preloadContinue') || 'Continue') }}
+          {{ store.isPreloading ? (store.t('menu.preloadPause')) : (store.t('menu.preloadContinue')) }}
         </button>
         <button
           class="flex-1 h-7 flex items-center justify-center gap-1.5 rounded text-[9px] font-bold uppercase tracking-wider border transition-all hover:scale-[1.02] active:scale-95"
@@ -170,7 +170,7 @@ function getSetting(id: number) {
           @click="store.preloadAssets('components')"
         >
           <FaIcon icon="rotate-right" :size="10" />
-          {{ store.t('menu.preloadRestart') || 'Restart' }}
+          {{ store.t('menu.preloadRestart') }}
         </button>
       </div>
       
@@ -195,7 +195,7 @@ function getSetting(id: number) {
       <template v-if="getComponent(item.id) && getSetting(item.id)">
         <div class="grid grid-cols-2 gap-3 mt-1.5">
           <NumberStepper
-            :label="store.t('components.drawable') || 'Model'"
+            :label="store.t('components.drawable')"
             :model-value="getComponent(item.id)!.drawable"
             :min="getSetting(item.id)?.drawable?.min ?? 0"
             :max="getSetting(item.id)?.drawable?.max ?? 0"
@@ -203,7 +203,7 @@ function getSetting(id: number) {
             @update:model-value="updateDrawable(item.id, $event)"
           />
           <NumberStepper
-            :label="store.t('components.texture') || 'Texture'"
+            :label="store.t('components.texture')"
             :model-value="getComponent(item.id)!.texture"
             :min="getSetting(item.id)?.texture?.min ?? 0"
             :max="getSetting(item.id)?.texture?.max ?? 0"

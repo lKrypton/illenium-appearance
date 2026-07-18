@@ -4,15 +4,15 @@ import { useAppearanceStore } from '@/stores/appearance'
 const store = useAppearanceStore()
 
 const getShopTitle = (shopType?: string) => {
-  if (!shopType) return store.t('menu.title') || 'Char Customization'
+  if (!shopType) return store.t('menu.title')
   switch(shopType.toLowerCase()) {
     case 'ponsonbys': return 'Ponsonbys'
     case 'binco': return 'Binco'
     case 'suburban': return 'Suburban'
-    case 'barber': return store.t('menu.barberShopTitle') || 'Barber Shop'
-    case 'tattoo': return store.t('menu.tattooShopTitle') || 'Tattoo Studio'
-    case 'wardrobe': return store.t('outfits.save.menuTitle') || 'Save Current Outfit'
-    default: return store.t('menu.title') || 'Char Customization'
+    case 'barber': return store.t('menu.barberShopTitle')
+    case 'tattoo': return store.t('menu.tattooShopTitle')
+    case 'wardrobe': return store.t('outfits.save.menuTitle')
+    default: return store.t('menu.title')
   }
 }
 

@@ -90,9 +90,9 @@ onMounted(loadOutfits)
       </div>
       <div class="flex flex-col">
         <h3 class="text-sm font-display font-bold text-theme-text-primary tracking-widest uppercase">
-          {{ store.t('menu.savedOutfits') || 'Wardrobe' }}
+          {{ store.t('menu.savedOutfits') }}
         </h3>
-        <span class="text-[9px] text-theme-text-muted uppercase tracking-tighter opacity-70">{{ store.t('menu.wardrobeSubtitle') || 'Kayıtlı Kombinlerim' }}</span>
+        <span class="text-[9px] text-theme-text-muted uppercase tracking-tighter opacity-70">{{ store.t('menu.wardrobeSubtitle') }}</span>
       </div>
     </div>
 
@@ -105,10 +105,10 @@ onMounted(loadOutfits)
         </div>
         <div class="flex flex-col items-center gap-1">
           <span class="text-[11px] font-black uppercase tracking-widest opacity-40 text-theme-text-primary">
-            {{ store.t('menu.wardrobeEmpty') || 'Kayıtlı Kıyafet Yok' }}
+            {{ store.t('menu.wardrobeEmpty') }}
           </span>
           <span class="text-[9px] font-bold uppercase tracking-wider opacity-25 text-theme-text-muted">
-            {{ store.t('menu.wardrobeEmptyHint') || 'Aşağıdan mevcut kıyafetini kaydet' }}
+            {{ store.t('menu.wardrobeEmptyHint') }}
           </span>
         </div>
       </div>
@@ -130,14 +130,14 @@ onMounted(loadOutfits)
         <div class="flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-300">
           <button 
             class="w-7 h-7 rounded bg-theme-accent text-white flex items-center justify-center hover:brightness-110 transition-all active:scale-90 shadow-lg"
-            :title="store.t('outfits.change.title') || 'Giy'"
+            :title="store.t('outfits.change.title')"
             @click="wearOutfit(outfit.id)"
           >
             <FaIcon icon="play" :size="10" />
           </button>
           <button 
             class="w-7 h-7 rounded bg-red-500 text-white flex items-center justify-center hover:brightness-110 transition-all active:scale-90 shadow-lg"
-            :title="store.t('outfits.delete.title') || 'Sil'"
+            :title="store.t('outfits.delete.title')"
             @click="deleteOutfit(outfit.id)"
           >
             <FaIcon icon="trash" :size="10" />
@@ -151,7 +151,7 @@ onMounted(loadOutfits)
       <input
         v-model="newOutfitName"
         type="text"
-        :placeholder="store.t('outfits.save.name.label') || 'Kıyafet adı'"
+        :placeholder="store.t('outfits.save.name.label')"
         class="w-full h-10 px-3 rounded-theme-card bg-black/40 text-theme-text-primary text-[12px] font-bold border focus:outline-none focus:border-theme-accent transition-all"
         :style="{ borderColor: 'rgba(var(--theme-accent-rgb), 0.25)' }"
         @keyup.enter="confirmSave"
@@ -163,13 +163,13 @@ onMounted(loadOutfits)
           :disabled="isSaving || !newOutfitName.trim()"
           @click="confirmSave"
         >
-          {{ isSaving ? '...' : (store.t('modal.save.confirm') || 'Kaydet') }}
+          {{ isSaving ? '...' : (store.t('modal.save.confirm')) }}
         </button>
         <button
           class="cancel-btn px-3 h-9 rounded-theme-card text-[10px] font-bold uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-95 border"
           @click="showNameInput = false"
         >
-          {{ store.t('modal.exit.confirm') || 'İptal' }}
+          {{ store.t('modal.exit.cancel') }}
         </button>
       </div>
     </div>
@@ -182,7 +182,7 @@ onMounted(loadOutfits)
       @click="openSaveDialog"
     >
        <FaIcon icon="plus" :size="12" />
-       {{ store.t('outfits.save.menuTitle') || 'Mevcut Kıyafeti Kaydet' }}
+       {{ store.t('outfits.save.menuTitle') }}
     </button>
   </div>
 </template>

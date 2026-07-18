@@ -88,14 +88,14 @@ const sectionComponents: Record<string, any> = {
 }
 
 const allTabs = [
-  { id: 'model' as TabId, icon: icons.tabs.model, labelKey: 'ped.title', fallback: 'Karakter' },
-  { id: 'heritage' as TabId, icon: icons.tabs.heritage, labelKey: 'headBlend.title', fallback: 'Kalıtım' },
-  { id: 'face' as TabId, icon: icons.tabs.face, labelKey: 'faceFeatures.title', fallback: 'Yüz' },
-  { id: 'appearance' as TabId, icon: icons.tabs.appearance, labelKey: 'headOverlays.title', fallback: 'Görünüm' },
-  { id: 'hair' as TabId, icon: icons.tabs.hair, labelKey: 'headOverlays.hair.title', fallback: 'Saç' },
-  { id: 'clothing' as TabId, icon: icons.tabs.clothing, labelKey: 'components.title', fallback: 'Kıyafet' },
-  { id: 'accessories' as TabId, icon: icons.tabs.accessories, labelKey: 'props.title', fallback: 'Aksesuar' },
-  { id: 'tattoos' as TabId, icon: icons.tabs.tattoos, labelKey: 'tattoos.title', fallback: 'Dövme' },
+  { id: 'model' as TabId, icon: icons.tabs.model, labelKey: 'ped.title' },
+  { id: 'heritage' as TabId, icon: icons.tabs.heritage, labelKey: 'headBlend.title' },
+  { id: 'face' as TabId, icon: icons.tabs.face, labelKey: 'faceFeatures.title' },
+  { id: 'appearance' as TabId, icon: icons.tabs.appearance, labelKey: 'headOverlays.title' },
+  { id: 'hair' as TabId, icon: icons.tabs.hair, labelKey: 'headOverlays.hair.title' },
+  { id: 'clothing' as TabId, icon: icons.tabs.clothing, labelKey: 'components.title' },
+  { id: 'accessories' as TabId, icon: icons.tabs.accessories, labelKey: 'props.title' },
+  { id: 'tattoos' as TabId, icon: icons.tabs.tattoos, labelKey: 'tattoos.title' },
 ]
 
 const tabs = computed(() =>

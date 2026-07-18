@@ -8,14 +8,14 @@ import { computed } from 'vue'
 const store = useAppearanceStore()
 
 const allTabs = [
-  { id: 'model' as TabId, icon: icons.tabs.model, label: store.t('ped.title') || 'Karakter' },
-  { id: 'heritage' as TabId, icon: icons.tabs.heritage, label: store.t('headBlend.title') || 'Kalıtım' },
-  { id: 'face' as TabId, icon: icons.tabs.face, label: store.t('faceFeatures.title') || 'Yüz' },
-  { id: 'appearance' as TabId, icon: icons.tabs.appearance, label: store.t('headOverlays.title') || 'Görünüm' },
-  { id: 'hair' as TabId, icon: icons.tabs.hair, label: store.t('headOverlays.hair.title') || 'Saç' },
-  { id: 'clothing' as TabId, icon: icons.tabs.clothing, label: store.t('components.title') || 'Kıyafetler' },
-  { id: 'accessories' as TabId, icon: icons.tabs.accessories, label: store.t('props.title') || 'Aksesuarlar' },
-  { id: 'tattoos' as TabId, icon: icons.tabs.tattoos, label: store.t('tattoos.title') || 'Dövmeler' },
+  { id: 'model' as TabId, icon: icons.tabs.model, label: store.t('ped.title') },
+  { id: 'heritage' as TabId, icon: icons.tabs.heritage, label: store.t('headBlend.title') },
+  { id: 'face' as TabId, icon: icons.tabs.face, label: store.t('faceFeatures.title') },
+  { id: 'appearance' as TabId, icon: icons.tabs.appearance, label: store.t('headOverlays.title') },
+  { id: 'hair' as TabId, icon: icons.tabs.hair, label: store.t('headOverlays.hair.title') },
+  { id: 'clothing' as TabId, icon: icons.tabs.clothing, label: store.t('components.title') },
+  { id: 'accessories' as TabId, icon: icons.tabs.accessories, label: store.t('props.title') },
+  { id: 'tattoos' as TabId, icon: icons.tabs.tattoos, label: store.t('tattoos.title') },
 ]
 
 /** Only show tabs that the current config allows */

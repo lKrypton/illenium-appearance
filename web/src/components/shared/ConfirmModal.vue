@@ -23,23 +23,23 @@ const isSave = () => (props.variant ?? 'save') === 'save'
 
 const resolvedTitle = computed(() =>
   props.title ?? (isSave()
-    ? store.t('modal.save.title') || 'Save Appearance'
-    : store.t('modal.exit.title') || 'Exit Shop')
+    ? store.t('modal.save.title')
+    : store.t('modal.exit.title'))
 )
 const resolvedDescription = computed(() =>
   props.description ?? (isSave()
-    ? store.t('modal.save.description') || 'Are you sure you want to save?'
-    : store.t('modal.exit.description') || 'Your changes will not be saved.')
+    ? store.t('modal.save.description')
+    : store.t('modal.exit.description'))
 )
 const resolvedConfirmText = computed(() =>
   props.confirmText ?? (isSave()
-    ? store.t('modal.save.confirm') || 'Save'
-    : store.t('modal.exit.confirm') || 'Exit')
+    ? store.t('modal.save.confirm')
+    : store.t('modal.exit.confirm'))
 )
 const resolvedCancelText = computed(() =>
   props.cancelText ?? (isSave()
-    ? store.t('modal.save.cancel') || 'Cancel'
-    : store.t('modal.exit.cancel') || 'Cancel')
+    ? store.t('modal.save.cancel')
+    : store.t('modal.exit.cancel'))
 )
 </script>
 

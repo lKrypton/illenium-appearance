@@ -3,11 +3,15 @@ Locales["tr"] = {
         modal = {
             save = {
                 title = "Görünümü Kaydet",
-                description = "Bu görünümle devam edeceksiniz"
+                description = "Bu görünümle devam edeceksiniz",
+                confirm = "Kaydet",
+                cancel = "İptal"
             },
             exit = {
                 title = "Görünümden Çık",
-                description = "Değişiklikler kaydedilmeyecek"
+                description = "Değişiklikler kaydedilmeyecek",
+                confirm = "Çık",
+                cancel = "İptal"
             },
             accept = "Evet",
             decline = "Hayır"
@@ -150,7 +154,8 @@ Locales["tr"] = {
             buy = "Satın Al",
             delete = "Sil",
             deleteAll = "Tüm Dövmeleri Sil",
-            opacity = "Opaklık"
+            opacity = "Opaklık",
+            empty = "Kullanılabilir tasarım yok"
         }
     },
 
@@ -299,6 +304,7 @@ Locales["tr"] = {
         favorites = "Favoriler",
         showAll = "Tümünü Göster",
         showFavorites = "Favorileri Göster",
+        toggleFavorite = "Favorilere Ekle/Çıkar",
         cancelPreload = "İptal",
         startPreload = "Ön Yükleme",
         loading = "Yükleniyor",

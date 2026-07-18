@@ -21,7 +21,7 @@ const emit = defineEmits<{
       @mouseleave="($event.currentTarget as HTMLElement).style.background = '#222222'"
       @click="emit('confirm-exit')">
       <FaIcon :icon="icons.actions.exit" :size="13" />
-      <span>{{ store.t('menu.exit') || 'Exit' }}</span>
+      <span>{{ store.t('menu.exit') }}</span>
     </button>
     <button
       class="flex-1 h-10 flex items-center justify-center gap-1.5 rounded text-white text-[12px] font-bold uppercase tracking-wider"
@@ -31,7 +31,7 @@ const emit = defineEmits<{
       @mouseleave="($event.currentTarget as HTMLElement).style.background = '#dc2626'"
       @click="store.appearance?.model ? emit('confirm-save') : undefined">
       <FaIcon :icon="icons.actions.save" :size="13" />
-      <span>{{ store.t('menu.save') || 'Save' }}</span>
+      <span>{{ store.t('menu.save') }}</span>
     </button>
   </div>
 </template>

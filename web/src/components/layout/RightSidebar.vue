@@ -96,7 +96,7 @@ defineExpose({ isHandsUp, rotateLeft, rotateRight, turnAround })
 
         <FaIcon :icon="icons.camera[cam as keyof typeof icons.camera]" :size="18" />
         <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-theme-accent-border rounded-lg text-[10px] font-bold text-theme-text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-          {{ store.t('camera.' + cam) || cam.charAt(0).toUpperCase() + cam.slice(1) }}
+          {{ store.t('camera.' + cam) }}
         </div>
       </button>
     </div>
@@ -121,7 +121,7 @@ defineExpose({ isHandsUp, rotateLeft, rotateRight, turnAround })
 
         <FaIcon :icon="icons.actions.rotateLeft" :size="18" />
         <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-theme-accent-border rounded-lg text-[10px] font-bold text-theme-text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-          {{ store.t('menu.rotateLeft') || 'Rotate Left' }}
+          {{ store.t('menu.rotateLeft') }}
         </div>
       </button>
       <button
@@ -140,7 +140,7 @@ defineExpose({ isHandsUp, rotateLeft, rotateRight, turnAround })
 
         <FaIcon :icon="icons.actions.rotateRight" :size="18" />
         <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-theme-accent-border rounded-lg text-[10px] font-bold text-theme-text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-          {{ store.t('menu.rotateRight') || 'Rotate Right' }}
+          {{ store.t('menu.rotateRight') }}
         </div>
       </button>
       <button
@@ -160,7 +160,7 @@ defineExpose({ isHandsUp, rotateLeft, rotateRight, turnAround })
 
         <FaIcon icon="street-view" :size="18" />
         <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-theme-accent-border rounded-lg text-[10px] font-bold text-theme-text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-          {{ store.t('menu.turnAround') || 'Turn Around' }}
+          {{ store.t('menu.turnAround') }}
         </div>
       </button>
     </div>
@@ -186,7 +186,7 @@ defineExpose({ isHandsUp, rotateLeft, rotateRight, turnAround })
 
         <FaIcon icon="mask" :size="18" />
         <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-theme-accent-border rounded-lg text-[10px] font-bold text-theme-text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-          {{ store.t('components.mask') || 'Mask' }}
+          {{ store.t('components.mask') }}
         </div>
       </button>
 
@@ -207,7 +207,7 @@ defineExpose({ isHandsUp, rotateLeft, rotateRight, turnAround })
 
         <FaIcon icon="hat-cowboy" :size="18" />
         <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-theme-accent-border rounded-lg text-[10px] font-bold text-theme-text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-          {{ store.t('props.hats') || 'Hat' }}
+          {{ store.t('props.hats') }}
         </div>
       </button>
 
@@ -228,7 +228,7 @@ defineExpose({ isHandsUp, rotateLeft, rotateRight, turnAround })
 
         <FaIcon icon="shirt" :size="18" />
         <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-theme-accent-border rounded-lg text-[10px] font-bold text-theme-text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-          {{ store.t('components.upperBody') || 'Upper Body' }}
+          {{ store.t('components.upperBody') }}
         </div>
       </button>
 
@@ -249,7 +249,7 @@ defineExpose({ isHandsUp, rotateLeft, rotateRight, turnAround })
 
         <FaIcon icon="socks" :size="18" />
         <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-theme-accent-border rounded-lg text-[10px] font-bold text-theme-text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-          {{ store.t('components.lowerBody') || 'Lower Body' }}
+          {{ store.t('components.lowerBody') }}
         </div>
       </button>
     </div>
@@ -274,7 +274,7 @@ defineExpose({ isHandsUp, rotateLeft, rotateRight, turnAround })
 
         <FaIcon icon="lightbulb" :size="18" />
         <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-yellow-500/20 rounded-lg text-[10px] font-bold text-yellow-400 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-          {{ store.t('menu.toggleLight') || 'Light' }}
+          {{ store.t('menu.toggleLight') }}
         </div>
       </button>
 
@@ -294,7 +294,7 @@ defineExpose({ isHandsUp, rotateLeft, rotateRight, turnAround })
 
         <FaIcon icon="child-reaching" :size="18" />
         <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-theme-accent-border rounded-lg text-[10px] font-bold text-theme-text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-          {{ store.t('menu.toggleHandsUp') || 'Hands Up' }}
+          {{ store.t('menu.toggleHandsUp') }}
         </div>
       </button>
 
@@ -316,7 +316,7 @@ defineExpose({ isHandsUp, rotateLeft, rotateRight, turnAround })
 
         <FaIcon icon="clipboard" :size="18" />
         <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-theme-accent-border rounded-lg text-[10px] font-bold text-theme-text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-          {{ store.t('menu.savedOutfits') || 'Dolabım' }}
+          {{ store.t('menu.savedOutfits') }}
         </div>
       </button>
     </div>

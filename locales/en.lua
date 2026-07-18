@@ -3,11 +3,15 @@ Locales["en"] = {
         modal = {
             save = {
                 title = "Save Customization",
-                description = "You will continue with this look"
+                description = "You will continue with this look",
+                confirm = "Save",
+                cancel = "Cancel"
             },
             exit = {
                 title = "Exit Customization",
-                description = "Your changes will not be saved"
+                description = "Your changes will not be saved",
+                confirm = "Exit",
+                cancel = "Cancel"
             },
             accept = "Yes",
             decline = "No"
@@ -150,7 +154,8 @@ Locales["en"] = {
             buy = "Purchase",
             delete = "Delete",
             deleteAll = "Delete All Tattoos",
-            opacity = "Opacity"
+            opacity = "Opacity",
+            empty = "No designs available"
         }
     },
 
@@ -299,6 +304,7 @@ Locales["en"] = {
         favorites = "Favorites",
         showAll = "Show All",
         showFavorites = "Show Favorites",
+        toggleFavorite = "Add/Remove Favorite",
         cancelPreload = "Cancel",
         startPreload = "Preload",
         loading = "Loading",
