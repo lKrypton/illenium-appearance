@@ -69,7 +69,7 @@ function setEyeColor(val: number) {
     <!-- Header -->
     <div class="flex items-center justify-between mb-6">
       <h2 class="text-[14px] font-bold text-white uppercase tracking-widest font-display">
-        {{ store.t('headOverlays.hair.title') || 'Hair' }}
+        {{ store.t('headOverlays.hair.title') }}
       </h2>
       <div class="flex items-center gap-2">
         <button
@@ -88,7 +88,7 @@ function setEyeColor(val: number) {
             class="mr-2" 
             :class="store.isFilterFavoritesActive ? 'text-white' : 'text-theme-accent'" 
           />
-          {{ store.t('menu.favorites') || 'Favorites' }}
+          {{ store.t('menu.favorites') }}
         </button>
 
         <button 
@@ -106,7 +106,7 @@ function setEyeColor(val: number) {
             class="mr-2" 
             :class="!store.isPreloading ? 'text-theme-accent' : 'text-red-500'" 
           />
-          {{ store.isPreloading ? (store.t('menu.cancelPreload') || 'Cancel') : (store.t('menu.startPreload') || 'Preload') }}
+          {{ store.isPreloading ? (store.t('menu.cancelPreload')) : (store.t('menu.startPreload')) }}
         </button>
       </div>
     </div>
@@ -121,10 +121,10 @@ function setEyeColor(val: number) {
           </div>
           <div class="flex flex-col">
             <h2 class="text-[12px] font-bold text-theme-accent uppercase tracking-widest font-display">
-              {{ store.preloadItem }} {{ store.t('menu.loading') || 'LOADING' }}
+              {{ store.preloadItem }} {{ store.t('menu.loading') }}
             </h2>
             <span class="text-[9px] text-theme-text-muted uppercase font-bold tracking-tighter opacity-40">
-              {{ store.t('menu.synchronizing') || 'System Synchronizing Assets...' }}
+              {{ store.t('menu.synchronizing') }}
             </span>
           </div>
         </div>
@@ -146,9 +146,9 @@ function setEyeColor(val: number) {
 
 
     <!-- Hair Style -->
-    <SectionCard :title="store.t('headOverlays.hair.style') || 'Style'" :icon="icons.hair.style" :default-open="true">
+    <SectionCard :title="store.t('headOverlays.hair.style')" :icon="icons.hair.style" :default-open="true">
       <NumberStepper
-        :label="store.t('headOverlays.hair.style') || 'Style'"
+        :label="store.t('headOverlays.hair.style')"
         v-model="local.style"
         :min="hairSettings?.style?.min ?? 0"
         :max="hairSettings?.style?.max ?? 77"
@@ -157,16 +157,16 @@ function setEyeColor(val: number) {
     </SectionCard>
 
     <!-- Hair Fade (ZONE_HAIR tattoo) — automaticFade=true ise gizle -->
-    <SectionCard v-if="!automaticFade && fadeItems.length > 0" :title="store.t('headOverlays.hair.fade') || 'Fade'" :icon="icons.hair.fade" :default-open="true">
+    <SectionCard v-if="!automaticFade && fadeItems.length > 0" :title="store.t('headOverlays.hair.fade')" :icon="icons.hair.fade" :default-open="true">
       <NumberStepper
-        :label="store.t('headOverlays.hair.fade') || 'Fade'"
+        :label="store.t('headOverlays.hair.fade')"
         :model-value="currentFadeIndex"
         :min="0"
         :max="fadeItems.length - 1"
         @update:model-value="setFade($event)"
       />
       <RangeSlider
-        :label="store.t('headOverlays.opacity') || 'Opacity'"
+        :label="store.t('headOverlays.opacity')"
         :model-value="currentFadeOpacity"
         :min="0.1"
         :max="1.0"
@@ -176,17 +176,17 @@ function setEyeColor(val: number) {
     </SectionCard>
 
     <!-- Hair Color -->
-    <SectionCard :title="store.t('headOverlays.hair.color') || 'Color'" :icon="icons.hair.color" :default-open="true">
+    <SectionCard :title="store.t('headOverlays.hair.color')" :icon="icons.hair.color" :default-open="true">
       <ColorPicker
         v-if="hairSettings?.color?.items?.length"
-        :label="store.t('headOverlays.hair.color') || 'Color'"
+        :label="store.t('headOverlays.hair.color')"
         :colors="hairSettings.color.items"
         v-model="local.color"
         @update:model-value="applyHair()"
       />
       <ColorPicker
         v-if="hairSettings?.highlight?.items?.length"
-        :label="store.t('headOverlays.hair.highlight') || 'Highlight'"
+        :label="store.t('headOverlays.hair.highlight')"
         :colors="hairSettings.highlight.items"
         v-model="local.highlight"
         @update:model-value="applyHair()"
@@ -194,9 +194,9 @@ function setEyeColor(val: number) {
     </SectionCard>
 
     <!-- Eye Color -->
-    <SectionCard :title="store.t('headOverlays.eyeColor') || 'Eye Color'" :icon="icons.hair.eyeColor" :default-open="true">
+    <SectionCard :title="store.t('headOverlays.eyeColor')" :icon="icons.hair.eyeColor" :default-open="true">
       <NumberStepper
-        :label="store.t('headOverlays.eyeColor') || 'Eye Color'"
+        :label="store.t('headOverlays.eyeColor')"
         :model-value="eyeColor"
         :min="eyeSettings?.min ?? 0"
         :max="eyeSettings?.max ?? 30"

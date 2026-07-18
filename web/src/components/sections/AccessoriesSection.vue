@@ -13,12 +13,12 @@ const propSettings = computed(() => store.settings?.props ?? [])
 const propConfig = computed(() => store.config.propConfig)
 
 // prop_id → configKey mapping (from reference code)
-const propItems: { id: number; configKey: string; localeKey: string; fallback: string; icon: string }[] = [
-  { id: 0, configKey: 'hats', localeKey: 'props.hats', fallback: 'Hats', icon: icons.accessories.hats },
-  { id: 1, configKey: 'glasses', localeKey: 'props.glasses', fallback: 'Glasses', icon: icons.accessories.glasses },
-  { id: 2, configKey: 'ear', localeKey: 'props.ear', fallback: 'Earrings', icon: icons.accessories.ear },
-  { id: 6, configKey: 'watches', localeKey: 'props.watches', fallback: 'Watches', icon: icons.accessories.watches },
-  { id: 7, configKey: 'bracelets', localeKey: 'props.bracelets', fallback: 'Bracelets', icon: icons.accessories.bracelets },
+const propItems: { id: number; configKey: string; localeKey: string; icon: string }[] = [
+  { id: 0, configKey: 'hats', localeKey: 'props.hats', icon: icons.accessories.hats },
+  { id: 1, configKey: 'glasses', localeKey: 'props.glasses', icon: icons.accessories.glasses },
+  { id: 2, configKey: 'ear', localeKey: 'props.ear', icon: icons.accessories.ear },
+  { id: 6, configKey: 'watches', localeKey: 'props.watches', icon: icons.accessories.watches },
+  { id: 7, configKey: 'bracelets', localeKey: 'props.bracelets', icon: icons.accessories.bracelets },
 ]
 
 // Filter by propConfig flags AND favorites if active
@@ -59,7 +59,7 @@ function getSetting(propId: number) {
 }
 
 function getLabel(item: typeof propItems[0]): string {
-  return store.t(item.localeKey) || item.fallback
+  return store.t(item.localeKey)
 }
 
 function updateDrawable(propId: number, drawable: number) {
@@ -79,7 +79,7 @@ function updateTexture(propId: number, texture: number) {
     <!-- Header -->
     <div class="flex items-center justify-between mb-6">
       <h2 class="text-[14px] font-bold text-white uppercase tracking-widest font-display">
-        {{ store.t('props.title') || 'Accessories' }}
+        {{ store.t('props.title') }}
       </h2>
       <div class="flex items-center gap-2">
         <button
@@ -98,7 +98,7 @@ function updateTexture(propId: number, texture: number) {
             class="mr-2" 
             :class="store.isFilterFavoritesActive ? 'text-white' : 'text-theme-accent'" 
           />
-          {{ store.t('menu.favorites') || 'Favorites' }}
+          {{ store.t('menu.favorites') }}
         </button>
 
         <button 
@@ -116,7 +116,7 @@ function updateTexture(propId: number, texture: number) {
             class="mr-2" 
             :class="!store.isPreloading ? 'text-theme-accent' : 'text-red-500'" 
           />
-          {{ store.isPreloading ? (store.t('menu.cancelPreload') || 'Cancel') : (store.t('menu.startPreload') || 'Preload') }}
+          {{ store.isPreloading ? (store.t('menu.cancelPreload')) : (store.t('menu.startPreload')) }}
         </button>
       </div>
     </div>
@@ -131,10 +131,10 @@ function updateTexture(propId: number, texture: number) {
           </div>
           <div class="flex flex-col">
             <h2 class="text-[12px] font-bold text-theme-accent uppercase tracking-widest font-display">
-              {{ store.preloadItem }} {{ store.t('menu.loading') || 'LOADING' }}
+              {{ store.preloadItem }} {{ store.t('menu.loading') }}
             </h2>
             <span class="text-[9px] text-theme-text-muted uppercase font-bold tracking-tighter opacity-40">
-               {{ store.t('menu.synchronizing') || 'System Synchronizing Assets...' }}
+               {{ store.t('menu.synchronizing') }}
             </span>
           </div>
         </div>
@@ -151,7 +151,7 @@ function updateTexture(propId: number, texture: number) {
           @click="store.isPreloading ? store.pausePreload() : store.preloadAssets('props')"
         >
           <FaIcon :icon="store.isPreloading ? 'pause' : 'play'" :size="10" />
-          {{ store.isPreloading ? (store.t('menu.preloadPause') || 'Pause') : (store.t('menu.preloadContinue') || 'Continue') }}
+          {{ store.isPreloading ? (store.t('menu.preloadPause')) : (store.t('menu.preloadContinue')) }}
         </button>
         <button
           class="flex-1 h-7 flex items-center justify-center gap-1.5 rounded text-[9px] font-bold uppercase tracking-wider border transition-all hover:scale-[1.02] active:scale-95"
@@ -159,7 +159,7 @@ function updateTexture(propId: number, texture: number) {
           @click="store.preloadAssets('props')"
         >
           <FaIcon icon="rotate-right" :size="10" />
-          {{ store.t('menu.preloadRestart') || 'Restart' }}
+          {{ store.t('menu.preloadRestart') }}
         </button>
       </div>
 
@@ -184,7 +184,7 @@ function updateTexture(propId: number, texture: number) {
       <template v-if="getProp(item.id) && getSetting(item.id)">
         <div class="grid grid-cols-2 gap-3 mt-1.5">
           <NumberStepper
-            :label="store.t('props.drawable') || 'Model'"
+            :label="store.t('props.drawable')"
             :model-value="getProp(item.id)!.drawable"
             :min="getSetting(item.id)?.drawable?.min ?? -1"
             :max="getSetting(item.id)?.drawable?.max ?? 0"
@@ -192,7 +192,7 @@ function updateTexture(propId: number, texture: number) {
             @update:model-value="updateDrawable(item.id, $event)"
           />
           <NumberStepper
-            :label="store.t('props.texture') || 'Texture'"
+            :label="store.t('props.texture')"
             :model-value="getProp(item.id)!.texture"
             :min="getSetting(item.id)?.texture?.min ?? -1"
             :max="getSetting(item.id)?.texture?.max ?? 0"

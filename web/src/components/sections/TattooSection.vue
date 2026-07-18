@@ -20,13 +20,13 @@ const selectedOpacity = ref(0.5)
 const baseTattooCost = computed(() => store.config?.tattooCost ?? 0)
 const chargePerTattoo = computed(() => store.config?.chargePerTattoo ?? false)
 
-const zones: { zone: TattooZone; localeKey: string; fallback: string; icon: string }[] = [
-  { zone: 'ZONE_TORSO',     localeKey: 'tattoos.items.ZONE_TORSO',     fallback: 'Torso',     icon: 'person' },
-  { zone: 'ZONE_HEAD',      localeKey: 'tattoos.items.ZONE_HEAD',      fallback: 'Head',      icon: 'face-meh' },
-  { zone: 'ZONE_LEFT_ARM',  localeKey: 'tattoos.items.ZONE_LEFT_ARM',  fallback: 'Left Arm',  icon: 'child-reaching' },
-  { zone: 'ZONE_RIGHT_ARM', localeKey: 'tattoos.items.ZONE_RIGHT_ARM', fallback: 'Right Arm', icon: 'child-reaching' },
-  { zone: 'ZONE_LEFT_LEG',  localeKey: 'tattoos.items.ZONE_LEFT_LEG',  fallback: 'Left Leg',  icon: 'socks' },
-  { zone: 'ZONE_RIGHT_LEG', localeKey: 'tattoos.items.ZONE_RIGHT_LEG', fallback: 'Right Leg', icon: 'socks' },
+const zones: { zone: TattooZone; localeKey: string; icon: string }[] = [
+  { zone: 'ZONE_TORSO',     localeKey: 'tattoos.items.ZONE_TORSO',     icon: 'person' },
+  { zone: 'ZONE_HEAD',      localeKey: 'tattoos.items.ZONE_HEAD',      icon: 'face-meh' },
+  { zone: 'ZONE_LEFT_ARM',  localeKey: 'tattoos.items.ZONE_LEFT_ARM',  icon: 'child-reaching' },
+  { zone: 'ZONE_RIGHT_ARM', localeKey: 'tattoos.items.ZONE_RIGHT_ARM', icon: 'child-reaching' },
+  { zone: 'ZONE_LEFT_LEG',  localeKey: 'tattoos.items.ZONE_LEFT_LEG',  icon: 'socks' },
+  { zone: 'ZONE_RIGHT_LEG', localeKey: 'tattoos.items.ZONE_RIGHT_LEG', icon: 'socks' },
 ]
 
 const availableTattoos = computed(() => tattooSettings.value?.items?.[activeZone.value] ?? [])
@@ -139,14 +139,14 @@ function fmtPrice(n: number) {
     <div class="flex items-center justify-between mb-2">
       <div class="space-y-1">
         <h2 class="text-[14px] font-bold text-theme-text-secondary uppercase tracking-widest font-display">
-          {{ store.t('tattoos.title') || 'Tattoos' }}
+          {{ store.t('tattoos.title') }}
         </h2>
         <div class="h-0.5 w-8 rounded-full" style="background: var(--theme-accent); opacity: 0.5" />
       </div>
       <div class="flex flex-col items-end">
         <span class="text-[13px] font-black text-theme-accent tabular-nums">{{ appliedCount }}</span>
         <span class="text-[8px] font-bold text-theme-text-muted uppercase tracking-tighter">
-          {{ store.t('tattoos.applied') || 'Applied' }}
+          {{ store.t('tattoos.applied') }}
         </span>
       </div>
     </div>
@@ -164,7 +164,7 @@ function fmtPrice(n: number) {
       >
         <FaIcon :icon="z.icon" :size="15" />
         <span class="text-[9px] font-black uppercase tracking-widest text-center w-full truncate">
-          {{ store.t(z.localeKey) || z.fallback }}
+          {{ store.t(z.localeKey) }}
         </span>
       </button>
     </div>
@@ -196,14 +196,14 @@ function fmtPrice(n: number) {
             style="background: rgba(34,197,94,0.15); color: rgb(74,222,128)"
           >
             <FaIcon icon="check" :size="9" />
-            {{ store.t('tattoos.applied') || 'Applied' }}
+            {{ store.t('tattoos.applied') }}
           </div>
         </div>
 
         <!-- Opacity slider -->
         <div class="rounded-lg p-3" style="background: rgba(255,255,255,0.03)">
           <RangeSlider
-            :label="store.t('tattoos.opacity') || 'Opacity'"
+            :label="store.t('tattoos.opacity')"
             v-model="selectedOpacity"
             :min="0.1"
             :max="1"
@@ -220,7 +220,7 @@ function fmtPrice(n: number) {
             @click="buySelected"
           >
             <FaIcon icon="pen-nib" :size="13" />
-            {{ chargePerTattoo ? (store.t('tattoos.buy') || 'Purchase') : (store.t('tattoos.apply') || 'Apply') }}
+            {{ chargePerTattoo ? (store.t('tattoos.buy')) : (store.t('tattoos.apply')) }}
           </button>
           <button
             v-else
@@ -229,7 +229,7 @@ function fmtPrice(n: number) {
             @click="deleteSelected"
           >
             <FaIcon icon="trash" :size="13" />
-            {{ store.t('tattoos.delete') || 'Remove' }}
+            {{ store.t('tattoos.delete') }}
           </button>
         </div>
       </div>
@@ -243,7 +243,7 @@ function fmtPrice(n: number) {
         @click="deleteAllTattoos"
       >
         <FaIcon icon="trash" :size="11" />
-        {{ store.t('tattoos.deleteAll') || 'Delete All Tattoos' }}
+        {{ store.t('tattoos.deleteAll') }}
       </button>
     </div>
 
@@ -253,7 +253,7 @@ function fmtPrice(n: number) {
         v-if="availableTattoos.length === 0"
         class="py-12 text-center text-[11px] font-bold uppercase tracking-widest text-theme-text-muted opacity-40"
       >
-        {{ store.t('tattoos.empty') || 'No designs available' }}
+        {{ store.t('tattoos.empty') }}
       </div>
 
       <div v-else class="flex flex-col gap-1.5 pb-4">

@@ -10,7 +10,7 @@ const store = useAppearanceStore()
 const tooltipClass = 'left-full ml-4'
 
 const props = defineProps<{
-  tabs: { id: TabId; icon: string; labelKey: string; fallback: string }[]
+  tabs: { id: TabId; icon: string; labelKey: string }[]
  }>()
 
 const emit = defineEmits<{
@@ -68,7 +68,7 @@ const emit = defineEmits<{
 
       <FaIcon :icon="tab.icon" :size="20" class="transition-transform group-hover:scale-110" />
       <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-theme-accent-border rounded-lg text-[10px] font-bold text-theme-text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-        {{ store.t(tab.labelKey) || tab.fallback }}
+        {{ store.t(tab.labelKey) }}
       </div>
     </button>
 
@@ -91,7 +91,7 @@ const emit = defineEmits<{
 
       <FaIcon icon="floppy-disk" :size="20" />
       <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-emerald-500/20 rounded-lg text-[10px] font-bold text-emerald-400 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-        {{ store.t('modal.save.confirm') || 'Save' }}
+        {{ store.t('modal.save.confirm') }}
       </div>
     </button>
 
@@ -108,7 +108,7 @@ const emit = defineEmits<{
 
       <FaIcon :icon="icons.actions.exit" :size="20" />
       <div :class="tooltipClass" class="absolute px-2.5 py-1.5 bg-theme-panel border border-red-500/20 rounded-lg text-[10px] font-bold text-red-400 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-2xl">
-        {{ store.t('modal.exit.confirm') || 'Cancel' }}
+        {{ store.t('modal.exit.confirm') }}
       </div>
     </button>
   </div>

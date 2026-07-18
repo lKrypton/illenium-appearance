@@ -122,7 +122,7 @@ function getModelIcon(model: string) {
     <!-- Header -->
     <div class="flex items-center justify-between">
       <h2 class="text-[14px] font-bold text-theme-text-secondary uppercase tracking-widest font-display">
-        {{ store.t('ped.title') || 'Character' }}
+        {{ store.t('ped.title') }}
       </h2>
       <button
         class="h-7 px-2.5 flex items-center gap-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all duration-200"

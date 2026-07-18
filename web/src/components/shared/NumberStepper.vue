@@ -167,7 +167,7 @@ function stopRepeat() {
           @click.stop="toggleFavorite"
           class="text-[10px] transition-all hover:scale-110 active:scale-90"
           :class="isFavorite ? 'text-theme-accent drop-shadow-[0_0_5px_rgba(var(--theme-accent-rgb),0.5)]' : 'text-theme-text-muted hover:text-white'"
-          title="Favorilere Ekle/Çıkar"
+          :title="store.t('menu.toggleFavorite')"
         >
           <FaIcon :icon="icons.shared.star" />
         </button>
