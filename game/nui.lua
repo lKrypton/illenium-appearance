@@ -330,8 +330,8 @@ RegisterNUICallback("appearance_save_outfit", function(data, cb)
     local hasMoney, price = lib.callback.await("illenium-appearance:server:hasMoney", false, "clothing")
     if not hasMoney then
         lib.notify({
-            title = _L("purchase.store.failure.title") or "Yetersiz Bakiye",
-            description = string.format("Kıyafet kaydetmek için $%d gerekiyor.", price or 0),
+            title = _L("purchase.store.saveOutfit.title"),
+            description = _L("purchase.store.saveOutfit.description"):format(price or 0),
             type = "error",
             position = Config.NotifyOptions.position
         })

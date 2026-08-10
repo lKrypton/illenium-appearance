@@ -367,7 +367,7 @@ export const useAppearanceStore = defineStore('appearance', () => {
   }
 
   // ── Fade (ZONE_HAIR tattoo) ──
-  // setPedTattoos üzerinden gider → PED_TATTOOS güncellenir → saç değişince fade korunur
+  // Goes through setPedTattoos -> updates PED_TATTOOS -> fade survives a hair change
   async function changeFade(fadeIndex: number) {
     if (!appearance.value || !settings.value) return
     const fadeItems = settings.value.tattoos?.items?.['ZONE_HAIR'] ?? []

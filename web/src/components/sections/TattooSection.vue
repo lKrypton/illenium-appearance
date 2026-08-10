@@ -12,9 +12,9 @@ const tattooSettings = computed(() => store.settings?.tattoos)
 const currentTattoos = computed(() => store.appearance?.tattoos ?? {} as Record<TattooZone, TattooItem[]>)
 const activeZone = ref<TattooZone>('ZONE_TORSO')
 
-// Seçili (önizlemede olan) dövme
+// The tattoo currently selected (being previewed)
 const selectedTattoo = ref<TattooItem | null>(null)
-// Önizleme/seçim için opaklık
+// Opacity for preview/selection
 const selectedOpacity = ref(0.5)
 
 const baseTattooCost = computed(() => store.config?.tattooCost ?? 0)
