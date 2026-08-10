@@ -423,6 +423,10 @@ Locales["en"] = {
             failure = {
                 title = "Payment Failed",
                 description = "Not enough money!"
+            },
+            saveOutfit = {
+                title = "Insufficient Balance",
+                description = "You need $%d to save this outfit."
             }
         },
         entrance = {

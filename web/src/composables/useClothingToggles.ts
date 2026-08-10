@@ -31,7 +31,7 @@ export function useClothingToggles() {
   const savedMaskDrawable       = ref(-1)
   const savedGlassesDrawable    = ref(-1)
 
-  // Sadece kullanıcı aktif olarak çıkardığında true olur → menü ilk açıldığında kırmızı göstermez
+  // Only true once the user removes it, so nothing is red on first open
   const hatWasRemoved  = ref(false)
   const maskWasRemoved = ref(false)
 

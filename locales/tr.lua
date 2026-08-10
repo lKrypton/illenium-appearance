@@ -423,6 +423,10 @@ Locales["tr"] = {
             failure = {
                 title = "Ödeme Başarısız",
                 description = "Yeterli para yok!"
+            },
+            saveOutfit = {
+                title = "Yetersiz Bakiye",
+                description = "Bu kombini kaydetmek için $%d gerekiyor."
             }
         },
         entrance = {

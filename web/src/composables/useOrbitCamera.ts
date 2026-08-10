@@ -43,7 +43,7 @@ export function useOrbitCamera() {
     orbitActive.value = false
     isDragging.value = false
 
-    // Değerleri sıfırla ki bir sonraki açılışta temiz başlasın
+    // Reset values so the next open starts clean
     orbitAngleH.value = 0
     orbitAngleV.value = 0
     orbitDist.value = 2.2
@@ -81,7 +81,7 @@ export function useOrbitCamera() {
 
     const { cursorX, cursorY } = normCursor(e)
     startOrbitMode(cursorX, cursorY)
-    // Drag başlangıcında focusZ'yi bone sistemine göre güncelle
+    // Update focusZ from the bone system at drag start
     updateOrbitLua({ cursorX, cursorY, updateFocus: true })
   }
 
@@ -97,7 +97,7 @@ export function useOrbitCamera() {
     lastMouseX.value = e.clientX
     lastMouseY.value = e.clientY
 
-    // Drag esnasında focusZ değişmez (sadece açılar güncellenir)
+    // focusZ does not change during drag (only angles update)
     updateOrbitLua()
   }
 
@@ -114,7 +114,7 @@ export function useOrbitCamera() {
       startOrbitMode(cursorX, cursorY)
     }
 
-    // Zoom güncelle — focusZ scroll'da asla değişmez
+    // Update zoom - focusZ never changes on scroll
     const delta = e.deltaY > 0 ? 0.15 : -0.15
     orbitDist.value = Math.max(0.5, Math.min(4.0, orbitDist.value + delta))
     updateOrbitLua() // updateFocus yok → focusZ sabit

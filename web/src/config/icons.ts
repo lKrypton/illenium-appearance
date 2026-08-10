@@ -1,10 +1,10 @@
 /**
  * ═══════════════════════════════════════════
  *  ICON CONFIG — FontAwesome 6 Free (SVG)
- *  Tüm iconları buradan değiştirebilirsin.
- *  Format: kebab-case icon adı (sadece isim, prefix olmadan)
- *  Örnek: 'user', 'shirt', 'eye', 'wand-magic-sparkles'
- *  Tüm ikonlar: https://fontawesome.com/icons?o=r&m=free&s=solid
+ *  Change every icon from here.
+ *  Format: kebab-case icon name (name only, no prefix)
+ *  Example: 'user', 'shirt', 'eye', 'wand-magic-sparkles'
+ *  All icons: https://fontawesome.com/icons?o=r&m=free&s=solid
  * ═══════════════════════════════════════════
  */
 
