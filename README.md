@@ -42,7 +42,7 @@ The UI theme changes automatically based on Shopping Type — every store feels 
 5. Done — all existing exports and events work as before
 
 ```
-git clone https://github.com/KULLANICI_ADIN/illenium-appearance
+git clone https://github.com/lKrypton/illenium-appearance
 ```
 
 ---
